@@ -69,7 +69,11 @@
             this.setStep(options.step);
         }
 
-        var template = $(DRPGlobal.template);
+        var templateText = $.fn.spinedit.defaults.template;
+        if (hasOptions && typeof options.template == 'string') {
+          templateText = options.template;
+        }
+        template = $(templateText);
         this.element.after(template);
 	$(template).each(function (i,x) {
             $(x).bind('selectstart click mousedown', function () { return false; });
@@ -177,17 +181,13 @@
         minimum: 0,
         maximum: 100,
         step: 1,
-        numberOfDecimals: 0
+        numberOfDecimals: 0,
+        template: '<span class="spinedit">' +
+          '<span class="glyphicon glyphicon-chevron-down"></span>' +
+          '<span class="glyphicon glyphicon-chevron-up"></span>' +
+        '</span>'
     };
 
     $.fn.spinedit.Constructor = SpinEdit;
-
-    var DRPGlobal = {};
-
-    DRPGlobal.template =
-    '<span class="spinedit">' +
-      '<span class="glyphicon glyphicon-chevron-down"></span>' +
-      '<span class="glyphicon glyphicon-chevron-up"></span>' +
-    '</span>';
 
 }(window.jQuery);
