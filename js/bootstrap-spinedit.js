@@ -125,11 +125,13 @@
     },
 
     increase: function () {
+      if (this.element.prop('disabled')) return;
       var newValue = this.value + this.step;
       this.setValue(newValue);
     },
 
     decrease: function () {
+      if (this.element.prop('disabled')) return;
       var newValue = this.value - this.step;
       this.setValue(newValue);
     },
