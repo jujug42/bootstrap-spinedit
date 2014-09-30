@@ -75,6 +75,9 @@
     }
     template = $(templateText);
     this.element.after(template);
+    if (this.element.parents(".input-group").length > 0) {
+        template.addClass("input-group-addon");
+    }
     $(template).each(function (i,x) {
       $(x).bind('selectstart click mousedown', function () { return false; });
     });

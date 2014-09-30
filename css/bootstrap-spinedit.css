@@ -15,3 +15,8 @@ span.spinedit .glyphicon-chevron-down { top: 8px; margin-right: -5px;}
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+.form-control.spinedit { padding: 6px; }
+span.input-group-addon.spinedit { padding: 6px 0 6px 6px; }
+span.input-group-addon.spinedit .glyphicon-chevron-up { left: -3px; }
+span.input-group-addon.spinedit .glyphicon-chevron-down { margin-right: -10px;}
